@@ -52,6 +52,16 @@ let users = [
     }
 ];
 
+/**
+ * @swagger
+ * /users:
+ *      get:
+ *          summary : Get all the users from the database
+ *          description : To get the all user
+ *          responses : 
+ *                  200 :
+ *                      description : TO GET all the users
+ */
 
 app.get('/users', (req, res)=>{
     res.send(users);
