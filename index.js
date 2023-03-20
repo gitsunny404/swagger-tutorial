@@ -22,8 +22,18 @@ const options ={
 const swaggerSpec = swaggerJSDoc(options);
 app.use('/swagger-doc', swaggerui.serve, swaggerui.setup(swaggerSpec))
 
+// defining the swagger
+/**
+ * @swagger
+ * /:
+ *  get :
+ *      summary : This is the main endpoint of the api
+ *      description : This is the description
+ *      responses : 
+ *              200:
+ *                  description : To test the get method
+ */
 
-// using json-server for the data storing for now on
 app.get('/', (req, res)=>{
     res.send(`<h3>Get Method of the USER API.</h3>`)
 });

@@ -7,7 +7,9 @@
 - npm i express
 
 2. write the normal server code for different methods as you normally do for creating the apis
-- import express from 'express';
+- 
+
+import express from 'express';
 
 const app = express();
 const port = 5001;
@@ -50,11 +52,13 @@ app.listen(port, ()=>{
 - npm i swagger-ui-express --save
 
 4. import them into the project :
-- import swaggerJSDoc from 'swagger-jsdoc';
+- 
+import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerui from 'swagger-ui-express';
 
 5. define options :
-- const options ={
+- 
+const options ={
     definition : {
         openapi : '3.0.0',
         info : {
@@ -69,8 +73,23 @@ import swaggerui from 'swagger-ui-express';
 }
 
 6. use the imported swaggers to use.
-- const swaggerSpec = swaggerJSDoc(options);
+- 
+const swaggerSpec = swaggerJSDoc(options);
 app.use('/swagger-doc', swaggerui.serve, swaggerui.setup(swaggerSpec))
 
 
 7. Swagger is being live on http://localhost:5001/swagger-doc
+
+# adding first get method swagger doc
+-
+// defining the swagger
+/**
+ * @swagger
+ * /:
+ *  get :
+ *      summary : This is the main endpoint of the api
+ *      description : This is the description
+ *      responses : 
+ *              200:
+ *                  description : To test the get method
+ */
