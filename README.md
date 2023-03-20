@@ -93,3 +93,16 @@ app.use('/swagger-doc', swaggerui.serve, swaggerui.setup(swaggerSpec))
  *              200:
  *                  description : To test the get method
  */
+
+ # get all the users api swagger :
+ - 
+ /**
+ * @swagger
+ * /users:
+ *      get:
+ *          summary : Get all the users from the database
+ *          description : To get the all user
+ *          responses : 
+ *                  200 :
+ *                      description : TO GET all the users
+ */
