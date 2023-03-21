@@ -3,7 +3,6 @@ import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerui from 'swagger-ui-express'
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { v4 as uuidv4 } from 'uuid';
 const app = express();
 app.use(bodyParser.json());
 
@@ -83,21 +82,21 @@ app.get('/', (req, res)=>{
 
 let books = [
     {
-        "id":"824a5a1e-066b-4a36-b523-32e796a4b5d1",
+        "id":1,
         "title": "Harry Potter & the philospher's stone.",
         "author": "J.K Rolling.",
         "finished": true,
         "cratedAt": "2001"
     },
     {
-        "id":"478fc197-4ac2-4eab-aa48-bf2a022ce007",
+        "id":2,
         "title": "Harry Potter & Order of Pheonix.",
         "author": "J.K Rolling.",
         "finished": false,
         "cratedAt": "2001"
     },
     {
-        "id":"a25fd89e-7a68-4ebe-ab9e-978d48b92f25",
+        "id":3,
         "title": "Harry Potter & half blood prince.",
         "author": "J.K Rolling.",
         "finished": true,
@@ -117,8 +116,6 @@ app.get('/books/:id', (req, res)=>{
 
 app.post('/books', (req, res)=>{
     const newBook = req.body;
-    const uid = uuidv4();
-    newBook.id = uid;
     books.push(newBook);
     res.send(books);
 });
