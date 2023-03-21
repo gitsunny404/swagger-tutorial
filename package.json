@@ -1,0 +1,33 @@
+{
+  "name": "com.swagger.node",
+  "version": "1.0.0",
+  "description": "This is the tutorial for adding swagger documentation on apis which are made from nodejs and expressjs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+  "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitsunny404/master-swagger.git"
+  },
+  "keywords": [
+    "swagger",
+    "express",
+    "node",
+    "nodejs",
+    "documentation"
+  ],
+  "author": "Sunny Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitsunny404/master-swagger/issues"
+  },
+  "homepage": "https://github.com/gitsunny404/master-swagger#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2"
+  }
+}
