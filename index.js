@@ -1,9 +1,10 @@
 import express from 'express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerui from 'swagger-ui-express'
+import bodyParser from 'body-parser';
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json());
 
 const port = 5000;
 app.get('/',(req, res)=>{
@@ -137,9 +138,6 @@ app.put('/books/:id', (req, res)=>{
         findbook.cratedAt = req.body.cratedAt;
         res.send(books);
     }
-
-    
-    
 });
 
 
