@@ -2,7 +2,7 @@ import express from 'express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerui from 'swagger-ui-express'
 import bodyParser from 'body-parser';
-
+import cors from 'cors';
 const app = express();
 app.use(bodyParser.json());
 
@@ -11,6 +11,7 @@ app.get('/',(req, res)=>{
     res.send(`<h1>Welcome to the bookstore API (swagger) 😎</h1>`)
 });
 
+app.use(cors());
 // setting swagger
 const options = {
     definition: {
