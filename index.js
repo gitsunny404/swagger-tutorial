@@ -66,15 +66,15 @@ app.use('/swagger', swaggerui.serve, swaggerui.setup(specs, {explorer: true}));
  *                  type: string
  *                  desciption: The book author
  *              createdAt:
- *                  type: string
+ *                  type: Date
  *                  format: date
  *                  description: The date of the book was added
  *          example:
- *            id: def5_re3A
- *            title: The New Turing Omnibus
- *            author: Alexander K. Dewdney
- *            finished: false
- *            createdAt: 2020-03-10T04:05:06.157Z
+ *            id: 23b7c22d-22e2-427a-b46a-55dad54ff244
+ *            title: Harry Potter and the Half bolld prince
+ *            author: J.K Rowling
+ *            finished: true
+ *            createdAt: 1997-03-10T04:05:06.157Z
  */
 
 app.get('/', (req, res)=>{
@@ -89,25 +89,12 @@ let books = [
         "finished": true,
         "cratedAt": "2001"
     },
-    {
-        "id":"478fc197-4ac2-4eab-aa48-bf2a022ce007",
-        "title": "Harry Potter & Order of Pheonix.",
-        "author": "J.K Rolling.",
-        "finished": false,
-        "cratedAt": "2001"
-    },
-    {
-        "id":"a25fd89e-7a68-4ebe-ab9e-978d48b92f25",
-        "title": "Harry Potter & half blood prince.",
-        "author": "J.K Rolling.",
-        "finished": true,
-        "cratedAt": "2001"
-    },
 ];
 
 app.get('/books', (req, res)=>{
     res.send(books);
 });
+
 
 app.get('/books/:id', (req, res)=>{
     const bookId = req.params.id;
@@ -118,7 +105,9 @@ app.get('/books/:id', (req, res)=>{
 app.post('/books', (req, res)=>{
     const newBook = req.body;
     const uid = uuidv4();
+    const dat = new Date();
     newBook.id = uid;
+    newBook.cratedAt = dat;
     books.push(newBook);
     res.send(books);
 });
